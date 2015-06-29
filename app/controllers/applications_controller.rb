@@ -25,6 +25,11 @@ class ApplicationsController < ApplicationController
   # POST /applications.json
   def create
     @application = Application.new(application_params)
+    unless @application.search
+      respond_to do |format|
+        format.html { render :new } and return
+      end
+    end
 
     respond_to do |format|
       if @application.save

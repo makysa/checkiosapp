@@ -1,8 +1,10 @@
 <h1>Listing applications</h1>
 
+<%= link_to 'New Application', new_application_path %>
 <table>
   <thead>
     <tr>
+      <th>Id</th>
       <th>Title</th>
       <th>Url</th>
       <th>Saved version</th>
@@ -13,6 +15,7 @@
   <tbody>
     <% @applications.each do |application| %>
       <tr>
+        <td><%= application.id %></td>
         <td><%= application.title %></td>
         <td><%= application.url %></td>
         <td><%= application.saved_version %></td>
@@ -26,4 +29,3 @@
 
 <br>
 
-<%= link_to 'New Application', new_application_path %>
