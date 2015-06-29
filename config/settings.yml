@@ -1,0 +1,12 @@
+defaults: &defaults
+  application:
+    url: itunes.apple.com/lookup
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
